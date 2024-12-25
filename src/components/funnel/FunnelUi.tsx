@@ -13,9 +13,12 @@ function Funnel({
 }) {
   return (
     <div
-      className={cn("pb-24 h-full flex flex-col overflow-hidden", className)}
+      className={cn(
+        "pb-24 h-full flex flex-col overflow-hidden px-4 gap-6 md:px-6 ",
+        className
+      )}
     >
-      <header className="flex h-10 items-center justify-between px-4">
+      <header className="flex h-12 items-center justify-between px-4 border-b border-gray-100 -mx-6">
         {goBack && <BackButton onClick={goBack}>Back</BackButton>}
       </header>
       {children}
@@ -33,7 +36,7 @@ function Title({
   return (
     <h2
       className={cn(
-        "text-3xl font-medium leading-9 text-center font-orbit",
+        "text-3xl font-medium leading-9 text-center font-ubuntu text-grey-700",
         className
       )}
     >
@@ -52,7 +55,7 @@ function BoldTitle({
   return (
     <p
       className={cn(
-        "font-blackHanSans text-[100px] text-gray-200 text-center leading-[90px]",
+        "font-blackHanSans text-[60px] sm:text-[80px] md:text-[100px] text-gray-200 text-center leading-[55px] sm:leading-[70px] md:leading-[90px] select-none",
         className
       )}
     >
@@ -69,7 +72,12 @@ function GrayText({
   className?: string;
 }) {
   return (
-    <p className={cn("my-0.5 text-sm font-normal font-orbit", className)}>
+    <p
+      className={cn(
+        "my-0.5 text-sm font-normal font-orbit text-gray-700",
+        className
+      )}
+    >
       {children}
     </p>
   );
@@ -140,7 +148,7 @@ function ButtonWrapper({
   return (
     <div
       className={cn(
-        "fixed bottom-20 left-1/2 flex w-full max-w-[400px] -translate-x-1/2 justify-center gap-2 px-6",
+        "fixed bottom-20 left-1/2 flex w-full max-w-[400px] -translate-x-1/2 justify-center gap-2 px-6 z-10",
         className
       )}
     >

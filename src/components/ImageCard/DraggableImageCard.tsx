@@ -17,7 +17,7 @@ export default function DraggableImageCard({
 }) {
   return (
     <motion.div
-      className="w-[200px] h-[300px] relative"
+      className="max-w-[200px] w-[30%] pb-[45%] sm:pb-[300px] relative"
       initial={{ left: initialPosition, rotate: initialRotation }}
       animate={{ rotate: animateRotation, left: animatePosition }}
       transition={{ duration: 1, ease: "easeInOut" }}

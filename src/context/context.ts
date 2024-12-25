@@ -1,10 +1,12 @@
+import { Concept } from "@/contant/constant";
+
 export type Start = {};
 export type SetUser = {
   name?: string;
   email?: string;
 };
 export type ChooseConcepts = {
-  concept?: string;
+  concepts?: Concept[];
 };
 export type ImageGenerate = {
   image?: string;

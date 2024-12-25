@@ -12,7 +12,7 @@ export default function Start({ onNext }: { onNext: (props: any) => void }) {
         <Funnel.GrayText>친구들에게 새해 카드를 만들어 보세요.</Funnel.GrayText>
       </div>
       <div className="flex flex-col justify-center items-center flex-1 gap-6">
-        <div className="flex">
+        <div className="flex w-full justify-center">
           <DraggableImageCard
             img={cardImage1}
             initialPosition={50}
