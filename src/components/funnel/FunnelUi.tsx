@@ -14,7 +14,7 @@ function Funnel({
   return (
     <div
       className={cn(
-        "pb-24 h-full flex flex-col overflow-hidden px-4 gap-6 md:px-6 ",
+        "pb-28 h-full flex flex-col overflow-hidden px-4 gap-6 md:px-6 ",
         className
       )}
     >

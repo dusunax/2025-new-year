@@ -37,10 +37,10 @@ export default function ChooseConcepts({
           <motion.li
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: idx * 0.1 }}
+            transition={{ delay: idx * 0.05 }}
             key={concept.ko}
             className={cn(
-              "h-32 rounded-lg flex gap-2 transition-all hover:delay-0",
+              "h-32 rounded-lg flex gap-2 transition-all hover:delay-0 cursor-pointer",
               idx % 5 === 0 ? "col-start-1 col-span-2" : "",
               idx % 5 === 1 ? "col-start-3 col-span-2" : "",
               idx % 5 === 2
@@ -57,7 +57,7 @@ export default function ChooseConcepts({
             style={{ backgroundColor: concept.color }}
             onClick={() => handleSelectConcept(concept)}
             whileHover={{
-              shadow: "10px 10px 16px rgba(0, 0, 0, 0.5)",
+              shadow: "10px 10px 16px rgba(0, 0, 0, 0.7)",
             }}
           >
             <div className="h-full w-32 p-2">

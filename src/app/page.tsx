@@ -1,5 +1,6 @@
 import { CakeIcon } from "lucide-react";
 import FunnelRender from "./_components/FunnelRender";
+import { Toaster } from "@/components/ui/toaster";
 
 export default function Home() {
   return (

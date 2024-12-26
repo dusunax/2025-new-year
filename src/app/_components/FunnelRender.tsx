@@ -1,12 +1,11 @@
 "use client";
 import { useFunnel } from "@use-funnel/browser";
 import { FunnelProps } from "@/context/context";
-import SetUser from "./SetUser";
-import ChooseConcepts from "./ChooseConcepts";
-import ImageGenerate from "./ImageGenerate";
-import SetMessage from "./SetMessage";
 import Start from "./Start";
-import SaveImage from "./SaveImage";
+import Notice from "./Notice";
+import ChooseConcepts from "./ChooseConcepts";
+import ImageGenerate from "./ImageGenerate/ImageGenerate";
+import Share from "./Share";
 
 export default function FunnelRender() {
   const funnel = useFunnel<FunnelProps>({
@@ -23,11 +22,11 @@ export default function FunnelRender() {
         start={({ context, history }) => (
           <Start
             {...context}
-            onNext={(props) => history.push("setUser", props)}
+            onNext={(props) => history.push("notice", props)}
           />
         )}
-        setUser={({ context, history }) => (
-          <SetUser
+        notice={({ context, history }) => (
+          <Notice
             {...context}
             onNext={(props) => history.push("chooseConcepts", props)}
             goBack={() => history.back()}
@@ -43,22 +42,12 @@ export default function FunnelRender() {
         imageGenerate={({ context, history }) => (
           <ImageGenerate
             {...context}
-            onNext={(props) => history.push("setMessage", props)}
+            onNext={(props) => history.push("share", props)}
             goBack={() => history.back()}
           />
         )}
-        setMessage={({ context, history }) => (
-          <SetMessage
-            {...context}
-            onNext={(props) => history.push("saveImage", props)}
-            goBack={() => history.back()}
-          />
-        )}
-        saveImage={({ context, history }) => (
-          <SaveImage
-            {...context}
-            goBack={() => history.back()}
-          />
+        share={({ context, history }) => (
+          <Share {...context} goBack={() => history.back()} />
         )}
       />
     </>

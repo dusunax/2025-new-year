@@ -2,7 +2,7 @@ import { useState } from "react";
 import Funnel from "@/components/funnel/FunnelUi";
 import { Card } from "@/components/ui/card";
 
-export default function SetUser({
+export default function Notice({
   onNext,
   goBack,
 }: {
@@ -11,7 +11,7 @@ export default function SetUser({
 }) {
   const { Title, GrayText, ButtonWrapper, Button } = Funnel;
   const [isLogin, setIsLogin] = useState(false);
-  
+
   return (
     <Funnel goBack={goBack}>
       <Title>📌 Notice</Title>
@@ -41,8 +41,12 @@ export default function SetUser({
       </Card>
 
       <ButtonWrapper>
-        <Button onClick={() => setIsLogin(!isLogin)}>{isLogin ? "로그아웃" : "로그인"}</Button>
-        <Button onClick={() => onNext({})} disabled={!isLogin}>Next</Button>
+        <Button onClick={() => setIsLogin(!isLogin)}>
+          {isLogin ? "로그아웃" : "로그인"}
+        </Button>
+        <Button onClick={() => onNext({})} disabled={!isLogin}>
+          Next
+        </Button>
       </ButtonWrapper>
     </Funnel>
   );

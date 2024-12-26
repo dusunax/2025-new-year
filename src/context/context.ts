@@ -1,7 +1,7 @@
 import { Concept } from "@/contant/constant";
 
 export type Start = {};
-export type SetUser = {
+export type Notice = {
   name?: string;
   email?: string;
 };
@@ -9,20 +9,22 @@ export type ChooseConcepts = {
   concepts?: Concept[];
 };
 export type ImageGenerate = {
+  concepts?: Concept[];
   image?: string;
+  message: {
+    to: string;
+    from: string;
+    text: string;
+  };
 };
-export type SetMessage = {
-  message?: string;
-};
-export type SaveImage = {
+export type Share = {
   image?: string;
 };
 
 export type FunnelProps = {
   start: Start;
-  setUser: SetUser;
+  notice: Notice;
   chooseConcepts: ChooseConcepts;
   imageGenerate: ImageGenerate;
-  setMessage: SetMessage;
-  saveImage: SaveImage;
+  share: Share;
 };
