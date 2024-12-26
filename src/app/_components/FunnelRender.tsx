@@ -5,7 +5,6 @@ import Start from "./Start";
 import Notice from "./Notice";
 import ChooseConcepts from "./ChooseConcepts";
 import ImageGenerate from "./ImageGenerate/ImageGenerate";
-import Share from "./Share";
 
 export default function FunnelRender() {
   const funnel = useFunnel<FunnelProps>({
@@ -40,14 +39,7 @@ export default function FunnelRender() {
           />
         )}
         imageGenerate={({ context, history }) => (
-          <ImageGenerate
-            {...context}
-            onNext={(props) => history.push("share", props)}
-            goBack={() => history.back()}
-          />
-        )}
-        share={({ context, history }) => (
-          <Share {...context} goBack={() => history.back()} />
+          <ImageGenerate {...context} goBack={() => history.back()} />
         )}
       />
     </>

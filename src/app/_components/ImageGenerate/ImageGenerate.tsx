@@ -1,34 +1,28 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
+import { DownloadIcon } from "lucide-react";
 import { type ImageGenerate } from "@/context/context";
 import Funnel from "@/components/funnel/FunnelUi";
-import { Toaster } from "@/components/ui/toaster";
 import useImageGenerate from "@/hooks/use-image-generate";
 import ConceptChipList from "./ConceptChipList";
 import DisplayCard, { CARD_STYLE, CardAlign, CardStyle } from "./DisplayCard";
 import OptionCard from "./OptionCard";
+import { Button } from "@/components/ui/button";
+import KakaoShare from "@/components/kakao/KakaoShare";
 
 export default function ImageGenerate({
-  onNext,
   goBack,
   concepts,
 }: {
-  onNext: (props: any) => void;
   goBack: () => void;
   concepts?: ImageGenerate["concepts"];
 }) {
   const imageContainerRef = useRef<HTMLImageElement>(null);
-  const { generateImage, downloadImage, loadedImage, loading, setLoading } =
+  const { generateImage, downloadImage, loadedImage, loading, generatedImage } =
     useImageGenerate({
-      concepts: [],
+      concepts,
       imageContainerRef,
     });
-
-  useEffect(() => {
-    if (!loadedImage) {
-      generateImage();
-    }
-  }, []);
 
   const [message, setMessage] = useState<{
     to: string;
@@ -45,15 +39,8 @@ export default function ImageGenerate({
 
   return (
     <Funnel goBack={goBack}>
-      <Toaster />
       <Funnel.Title>CardGenerate</Funnel.Title>
-      <div className="flex gap-2 flex-wrap justify-center">
-        <Funnel.GrayText className="text-center">
-          카드 생성 🎨
-          {loading ? "..." : ""}
-        </Funnel.GrayText>
         <ConceptChipList concepts={concepts} loading={loading} />
-      </div>
 
       <div className="flex flex-col gap-1 w-full lg:flex-row lg:max-w-[1200px] mx-auto">
         <DisplayCard
@@ -64,6 +51,7 @@ export default function ImageGenerate({
           message={message}
           imageContainerRef={imageContainerRef}
           cardAlign={cardAlign}
+          generateImage={generateImage}
         />
         <OptionCard
           message={message}
@@ -84,18 +72,9 @@ export default function ImageGenerate({
               disabled={!loadedImage}
               onClick={() => downloadImage()}
             >
-              다운로드
+              <DownloadIcon /> 다운로드
             </Funnel.Button>
-            <Funnel.Button
-              disabled={!loadedImage}
-              onClick={() =>
-                onNext({
-                  image: loadedImage,
-                })
-              }
-            >
-              Share
-            </Funnel.Button>
+            <KakaoShare imageUrl={generatedImage} />
           </div>
         </div>
       </Funnel.ButtonWrapper>

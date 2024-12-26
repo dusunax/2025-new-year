@@ -103,7 +103,7 @@ export default function OptionCard({
                 key={align}
                 className={cn(
                   "w-16 h-16 border-2 text-[10px] break-all flex items-center justify-center cursor-pointer relative",
-                  cardAlign === align
+                 cardShow && cardAlign === align
                     ? "border-orange-500 bg-orange-100 z-10"
                     : ""
                 )}

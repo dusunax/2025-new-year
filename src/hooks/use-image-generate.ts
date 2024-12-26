@@ -1,14 +1,8 @@
 import { RefObject, useEffect, useState } from "react";
-import { OpenAI } from "openai";
 import html2canvas from "html2canvas";
 import { saveAs } from "file-saver";
 import { ChooseConcepts } from "@/context/context";
 import { toast } from "./use-toast";
-
-const openai = new OpenAI({
-  apiKey: process.env.NEXT_PUBLIC_OPENAI_API_KEY,
-  dangerouslyAllowBrowser: true,
-});
 
 interface UseImageGenerate {
   concepts: ChooseConcepts["concepts"];
@@ -19,7 +13,7 @@ export default function useImageGenerate({
   concepts,
   imageContainerRef,
 }: UseImageGenerate) {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [generatedImage, setGeneratedImage] = useState("");
   const [loadedImage, setLoadedImage] = useState("");
 
@@ -27,7 +21,7 @@ export default function useImageGenerate({
     try {
       setLoading(true);
       const prompt = `2025 new years, text "2025", a blue snake, confetti, ${concepts?.map(
-        (e) => e.en
+        (e) => e.en.toLowerCase()
       )}`;
 
       toast({
@@ -35,14 +29,13 @@ export default function useImageGenerate({
         duration: 5000,
       });
 
-      const response = await openai.images.generate({
-        model: "dall-e-2",
-        prompt,
-        n: 1,
-        quality: "standard",
+      const response = await fetch("/api/generate-image", {
+        method: "POST",
+        body: JSON.stringify({ prompt }),
       });
 
-      const imageUrl = response.data[0].url;
+      const data = await response.json();
+      const imageUrl = data.imageUrl;
       setGeneratedImage(imageUrl ?? "");
     } catch (e) {
       console.log(e);
@@ -57,12 +50,10 @@ export default function useImageGenerate({
       return;
     }
     try {
-      console.log(imageContainerRef.current, generatedImage);
       if (imageContainerRef.current && generatedImage) {
         html2canvas(imageContainerRef.current).then((canvas) => {
-          console.log("canvas", canvas);
           canvas.toBlob((blob) => {
-            if (blob) saveAs(blob, "2024-new-year-message.png");
+            if (blob) saveAs(blob, "2025-new-year-message.png");
           });
         });
       }

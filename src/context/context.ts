@@ -17,14 +17,10 @@ export type ImageGenerate = {
     text: string;
   };
 };
-export type Share = {
-  image?: string;
-};
 
 export type FunnelProps = {
   start: Start;
   notice: Notice;
   chooseConcepts: ChooseConcepts;
   imageGenerate: ImageGenerate;
-  share: Share;
 };
