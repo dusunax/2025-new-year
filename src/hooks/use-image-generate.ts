@@ -15,7 +15,6 @@ export default function useImageGenerate({
 }: UseImageGenerate) {
   const [loading, setLoading] = useState(false);
   const [generatedImage, setGeneratedImage] = useState("");
-  const [loadedImage, setLoadedImage] = useState("");
 
   const generateImage = async () => {
     try {
@@ -39,7 +38,6 @@ export default function useImageGenerate({
 
       if (imageUrl) {
         setGeneratedImage(imageUrl);
-        proxyFetch(imageUrl);
       } else {
         throw new Error("이미지 url이 없습니다.");
       }
@@ -55,19 +53,6 @@ export default function useImageGenerate({
       });
     } finally {
       setLoading(false);
-    }
-  };
-
-  const proxyFetch = async (generatedImage: string) => {
-    try {
-      const response = await fetch(
-        `/api/proxy?url=${encodeURIComponent(generatedImage)}`
-      );
-      const blob = await response.blob();
-      const url = URL.createObjectURL(blob);
-      setLoadedImage(url);
-    } catch (error) {
-      console.error("Error loading image:", error);
     }
   };
 
@@ -122,7 +107,6 @@ export default function useImageGenerate({
 
   return {
     generatedImage,
-    loadedImage,
     generateImage,
     downloadImage,
     linkCopy,

@@ -17,7 +17,7 @@ export default function ImageGenerate({
   concepts?: ImageGenerate["concepts"];
 }) {
   const imageContainerRef = useRef<HTMLImageElement>(null);
-  const { generateImage, downloadImage, loadedImage, loading, generatedImage } =
+  const { generateImage, downloadImage, loading, generatedImage } =
     useImageGenerate({
       concepts,
       imageContainerRef,
@@ -40,7 +40,7 @@ export default function ImageGenerate({
       <div className="flex flex-col gap-1 w-full lg:flex-row lg:max-w-[1200px] mx-auto">
         <DisplayCard
           loading={loading}
-          loadedImage={loadedImage}
+          loadedImage={generatedImage}
           cardShow={cardShow}
           cardStyle={cardStyle}
           message={message}
@@ -64,7 +64,7 @@ export default function ImageGenerate({
         <div className="flex flex-col items-center gap-2">
           <div className="flex gap-2">
             <Funnel.Button
-              disabled={!loadedImage}
+              disabled={!generatedImage}
               onClick={() => downloadImage()}
             >
               <DownloadIcon /> 다운로드
