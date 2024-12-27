@@ -43,7 +43,7 @@ function KakaoScript() {
   );
 }
 
-export default function KakaoShare({ imageUrl }: { imageUrl: string }) {
+export default function KakaoShare() {
   const kakaoShare = () => {
     window.Kakao.Share.sendDefault({
       objectType: "feed",

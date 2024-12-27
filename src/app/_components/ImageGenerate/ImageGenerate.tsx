@@ -69,7 +69,7 @@ export default function ImageGenerate({
             >
               <DownloadIcon /> 다운로드
             </Funnel.Button>
-            <KakaoShare imageUrl={generatedImage} />
+            <KakaoShare />
           </div>
         </div>
       </Funnel.ButtonWrapper>
