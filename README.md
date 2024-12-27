@@ -31,6 +31,8 @@ TypeScript, Next.js (v15), OpenAI (DALL·E 3), ShadCN, Tailwind CSS, Framer Moti
 
 ### 스크린샷
 
+<img src="https://github.com/user-attachments/assets/c3477489-9290-49ec-ad48-1fdedac3d702" width="600" />
+
 #### 데스크탑
 ![241227-desktop-3](https://github.com/user-attachments/assets/ab17dd71-a2ee-4316-8182-d3d9198a500a)
 ![241227-desktop-6](https://github.com/user-attachments/assets/e1714e88-8f89-4145-929c-3543bf70cb9c)
