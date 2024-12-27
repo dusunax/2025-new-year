@@ -120,7 +120,7 @@ export default function DisplayCard({
           </div>
         )}
 
-        {cardShow && !loading && message?.text && (
+        {cardShow && !loading && loadedImage && (
           <div className="absolute w-full h-full left-0 top-0 grid grid-cols-5 grid-rows-5 text-sm sm:text-md md:text-lg">
             <motion.div
               className={`bg-white/80 rounded-xl backdrop-blur-sm cursor-grab m-2 transition-all duration-300 ${CARD_ALIGN_CLASS[cardAlign]}`}

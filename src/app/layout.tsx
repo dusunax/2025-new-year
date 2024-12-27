@@ -22,7 +22,12 @@ const blackHanSans = Black_Han_Sans({
 
 export const metadata: Metadata = {
   title: "2025 New Year Card Maker",
-  description: "2025 New Year Card Maker",
+  description: "AI로 새해 인사 카드 만들기✨",
+  openGraph: {
+    title: "2025 New Year Card Maker",
+    description: "AI로 새해 인사 카드 만들기✨",
+    images: ["https://2025-new-year.vercel.app/images/2025-card-maker.png"],
+  },
 };
 
 export default function RootLayout({

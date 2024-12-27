@@ -11,6 +11,9 @@ import {
   type CardStyle,
 } from "./DisplayCard";
 import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
+import { getRandomMessage } from "@/contant/constant";
+import { DicesIcon } from "lucide-react";
 
 interface OptionCardProps {
   message: ImageGenerate["message"];
@@ -33,6 +36,18 @@ export default function OptionCard({
   cardAlign,
   setCardAlign,
 }: OptionCardProps) {
+  const setRandomMessage = () => {
+    const text = getRandomMessage().ko;
+    setMessage((prev) =>
+      prev
+        ? {
+            ...prev,
+            text,
+          }
+        : { text, to: "", from: "" }
+    );
+  };
+
   return (
     <Card className="flex flex-col gap-4 p-4 lg:w-[500px]">
       <h3 className="text-lg font-bold">Content</h3>
@@ -43,7 +58,11 @@ export default function OptionCard({
           maxLength={20}
           value={message?.to}
           onChange={(e) =>
-            setMessage((prev) => ( prev ? { ...prev, to: e.target.value } : { to: e.target.value, from: '', text: '' }))
+            setMessage((prev) =>
+              prev
+                ? { ...prev, to: e.target.value }
+                : { to: e.target.value, from: "", text: "" }
+            )
           }
         />
       </div>
@@ -55,7 +74,9 @@ export default function OptionCard({
           value={message?.from}
           onChange={(e) =>
             setMessage((prev) =>
-              prev ? { ...prev, from: e.target.value } : { from: e.target.value, to: '', text: '' }
+              prev
+                ? { ...prev, from: e.target.value }
+                : { from: e.target.value, to: "", text: "" }
             )
           }
         />
@@ -67,8 +88,18 @@ export default function OptionCard({
           rows={4}
           maxLength={150}
           value={message?.text}
-          onChange={(e) => setMessage((prev) => ( prev ? { ...prev, text: e.target.value } : { text: e.target.value, to: '', from: '' }))}
+          onChange={(e) =>
+            setMessage((prev) =>
+              prev
+                ? { ...prev, text: e.target.value }
+                : { text: e.target.value, to: "", from: "" }
+            )
+          }
         />
+        <Button variant="outline" onClick={setRandomMessage}>
+          <DicesIcon />
+          랜덤 메시지
+        </Button>
       </div>
 
       <h3 className="text-lg font-bold">Option</h3>

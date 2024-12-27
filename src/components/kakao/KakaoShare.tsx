@@ -48,8 +48,8 @@ export default function KakaoShare({ imageUrl }: { imageUrl: string }) {
     window.Kakao.Share.sendDefault({
       objectType: "feed",
       content: {
-        title: "이미지 공유 기능 개발 중입니다✨",
-        imageUrl,
+        title: "2025년 새해 인사 카드 메이커",
+        imageUrl: "https://2025-new-year.vercel.app/images/2025-card-maker.png",
         link: {
           mobileWebUrl: WEB_URL,
           webUrl: WEB_URL,
@@ -62,7 +62,7 @@ export default function KakaoShare({ imageUrl }: { imageUrl: string }) {
     <>
       <Button variant="outline" className="!bg-yellow-400" onClick={kakaoShare}>
         <Share2Icon />
-        Share
+        링크 공유
       </Button>
       <KakaoScript />
     </>

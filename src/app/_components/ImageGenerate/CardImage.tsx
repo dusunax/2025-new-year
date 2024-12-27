@@ -13,7 +13,7 @@ function CardImage({ image }: { image: string }) {
       }`}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 0.5 }}
+      transition={{ duration: 1 }}
     >
       <Image
         src={hasError ? errorImage : image}
@@ -23,7 +23,7 @@ function CardImage({ image }: { image: string }) {
         alt="Generated Card"
         width={500}
         height={500}
-        className={`object-contain w-full h-full ${
+        className={`object-cover w-full h-full ${
           hasError ? "w-1/5 h-1/5" : ""
         }`}
       />
