@@ -79,7 +79,12 @@ export default function DisplayCard({
         ) : (
           <div className="text-lg text-grey-700 w-full h-full flex flex-col items-center justify-center">
             {loading ? (
-              <>
+              <motion.div
+                className="flex flex-col items-center justify-center"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.3, delay: 0.5 }}
+              >
                 <Image
                   src={loadingImage}
                   alt="loading"
@@ -95,7 +100,7 @@ export default function DisplayCard({
                   <br />
                   20초~2분 정도 소요됩니다.
                 </Funnel.GrayText>
-              </>
+              </motion.div>
             ) : (
               <>
                 <Image
