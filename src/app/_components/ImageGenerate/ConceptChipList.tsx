@@ -19,11 +19,10 @@ export default function ConceptChipList({
           transition={{ duration: 0.5, delay: idx * 0.1 }}
           className={`flex items-center justify-center rounded-xl px-2 py-[2px] text-md font-semibold ${
             loading ? "animate-bounce" : ""
-          }`}
+          } ${colorWeaver.getTextColor(concept.color)}`}
           style={{
             backgroundColor: concept.color,
             animationDelay: `${idx % 2 === 0 ? "0" : "0.5s"}`,
-            color: colorWeaver.getTextColor(concept.color),
           }}
         >
           {concept.ko}

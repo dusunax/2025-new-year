@@ -65,12 +65,14 @@ export default function ChooseConcepts({
               "sm:h-32 rounded-lg flex transition-all hover:delay-0 gap-2 cursor-pointer items-center sm:items-stretch",
               gridStyle(idx),
               gridStyleMd(idx),
-              colorWeaver.getTextColor(concept.color),
               selectedConcepts.length >= MAX_SELECTED_CONCEPTS
                 ? "!opacity-[0.6]"
                 : ""
             )}
-            style={{ backgroundColor: concept.color }}
+            style={{
+              backgroundColor: concept.color,
+              color: colorWeaver.getTextColor(concept.color),
+            }}
             onClick={() => handleSelectConcept(concept)}
             whileHover={{
               shadow: "10px 10px 16px rgba(0, 0, 0, 0.7)",
@@ -130,10 +132,11 @@ export default function ChooseConcepts({
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.1 }}
                   key={e.ko}
-                  className="rounded-2xl p-2 px-3 shadow-md cursor-pointer font-semibold flex items-center gap-1"
+                  className={`rounded-2xl p-2 px-3 shadow-md cursor-pointer font-semibold flex items-center gap-1 ${colorWeaver.getTextColor(
+                    e.color
+                  )}`}
                   style={{
                     backgroundColor: e.color,
-                    color: colorWeaver.getTextColor(e.color),
                   }}
                   onClick={() => handleSelectConcept(e)}
                 >
