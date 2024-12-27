@@ -1,13 +1,12 @@
 "use client";
-import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { type ImageGenerate } from "@/context/context";
 import Funnel from "@/components/funnel/FunnelUi";
 import { Card } from "@/components/ui/card";
 import loadingImage from "@/assets/images/paint.gif";
-import errorImage from "@/assets/images/error.png";
 import snakeImage from "@/assets/images/snake.png";
+import CardImage from "./CardImage";
 
 interface DisplayCardProps {
   loading: boolean;
@@ -72,38 +71,11 @@ export default function DisplayCard({
   cardAlign,
   generateImage,
 }: DisplayCardProps) {
-  const [hasError, setHasError] = useState(false);
-
   return (
     <Card className="w-full relative rounded-xl overflow-hidden flex items-center justify-center">
       <div ref={imageContainerRef} className="w-full h-full min-h-[500px]">
         {loadedImage ? (
-          <motion.div
-            className={`w-full h-full ${
-              hasError ? "flex items-center flex-col justify-center gap-2" : ""
-            }`}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
-          >
-            <Image
-              src={hasError ? errorImage : loadedImage}
-              onError={() => {
-                setHasError(true);
-              }}
-              alt="Generated Card"
-              width={500}
-              height={500}
-              className={`object-contain w-full h-full ${
-                hasError ? "w-1/5 h-1/5" : ""
-              }`}
-            />
-            {hasError && (
-              <Funnel.GrayText>
-                이미지를 생성하는 중<br /> 오류가 발생했습니다.
-              </Funnel.GrayText>
-            )}
-          </motion.div>
+          <CardImage image={loadedImage} />
         ) : (
           <div className="text-lg text-grey-700 w-full h-full flex flex-col items-center justify-center">
             {loading ? (
@@ -143,7 +115,7 @@ export default function DisplayCard({
           </div>
         )}
 
-        {cardShow && !loading && !hasError && message?.text && (
+        {cardShow && !loading && message?.text && (
           <div className="absolute w-full h-full left-0 top-0 grid grid-cols-5 grid-rows-5 text-sm sm:text-md md:text-lg">
             <motion.div
               className={`bg-white/80 rounded-xl backdrop-blur-sm cursor-grab m-2 transition-all duration-300 ${CARD_ALIGN_CLASS[cardAlign]}`}

@@ -77,8 +77,8 @@ export default function ChooseConcepts({
               shadow: "10px 10px 16px rgba(0, 0, 0, 0.7)",
             }}
           >
-            <motion.div className="h-32 sm:h-full w-32 p-2 shrink-0"
-            
+            <motion.div
+              className="h-32 sm:h-full w-32 p-2 shrink-0"
               whileHover={{
                 scale: 1.5,
                 zIndex: 50,
@@ -97,7 +97,7 @@ export default function ChooseConcepts({
               />
             </motion.div>
             <div className="relative flex-1 flex flex-col justify-between py-2">
-              <p className="text-xl font-semibold font-orbit relative z-10">
+              <p className="text-sm sm:text-md md:text-xl font-semibold font-orbit relative z-10 break-all">
                 {concept.ko} {concept.icon}
               </p>
               <Funnel.BoldTitle className="text-right !text-xl sm:!text-3xl text-white/50 -bottom-1 right-2 absolute">
