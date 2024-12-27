@@ -3,6 +3,8 @@ import { NextResponse } from "next/server";
 import { OPENAI_API_KEY } from "@/contant/config";
 import { coloredStatusCode } from "colored-status-code";
 
+export const maxDuration = 300;
+
 const openai = new OpenAI({
   apiKey: OPENAI_API_KEY,
 });
