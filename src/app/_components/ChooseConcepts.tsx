@@ -5,16 +5,15 @@ import { XIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { CONCEPTS, type Concept } from "@/contant/constant";
 import Funnel from "@/components/funnel/FunnelUi";
-import { isColorDark } from "@/utils/isColorDark";
-import {  type ChooseConcepts } from "@/context/context";
-
+import { type ChooseConcepts } from "@/context/context";
+import { colorWeaver } from "@/utils/colorWeaver";
 const MAX_SELECTED_CONCEPTS = 4;
 
 export default function ChooseConcepts({
   onNext,
   goBack,
 }: {
-  onNext: (prev: ChooseConcepts) => void
+  onNext: (prev: ChooseConcepts) => void;
   goBack: () => void;
 }) {
   const [selectedConcepts, setSelectedConcepts] = useState<Concept[]>([]);
@@ -66,7 +65,7 @@ export default function ChooseConcepts({
               "sm:h-32 rounded-lg flex transition-all hover:delay-0 gap-2 cursor-pointer items-center sm:items-stretch",
               gridStyle(idx),
               gridStyleMd(idx),
-              isColorDark(concept.color) ? "text-white" : "text-grey-800",
+              colorWeaver.getTextColor(concept.color),
               selectedConcepts.length >= MAX_SELECTED_CONCEPTS
                 ? "!opacity-[0.6]"
                 : ""
@@ -134,7 +133,7 @@ export default function ChooseConcepts({
                   className="rounded-2xl p-2 px-3 shadow-md cursor-pointer font-semibold flex items-center gap-1"
                   style={{
                     backgroundColor: e.color,
-                    color: isColorDark(e.color) ? "white" : "black",
+                    color: colorWeaver.getTextColor(e.color),
                   }}
                   onClick={() => handleSelectConcept(e)}
                 >

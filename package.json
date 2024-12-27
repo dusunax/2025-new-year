@@ -16,6 +16,7 @@
     "@use-funnel/browser": "^0.0.10",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "color-weaver": "^1.0.0",
     "colored-status-code": "^1.0.0",
     "file-saver": "^2.0.5",
     "html2canvas": "^1.4.1",

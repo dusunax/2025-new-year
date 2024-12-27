@@ -1002,6 +1002,11 @@ color-string@^1.9.0:
     color-name "^1.0.0"
     simple-swizzle "^0.2.2"
 
+color-weaver@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/color-weaver/-/color-weaver-1.0.0.tgz#9e695f9d7a0b577214963bf27cd16f7a6cc1ee64"
+  integrity sha512-R3FDIt+0XJHZyKWYynfg/PYG7grh0m9F3Wez4MlJ5vHIf7fQJJpBiMJehrGEVqideSCa/4KSw4kn67TievUyZw==
+
 color@^4.2.3:
   version "4.2.3"
   resolved "https://registry.yarnpkg.com/color/-/color-4.2.3.tgz#d781ecb5e57224ee43ea9627560107c0e0c6463a"

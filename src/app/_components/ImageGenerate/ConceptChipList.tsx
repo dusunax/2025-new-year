@@ -1,8 +1,14 @@
 import { motion } from "framer-motion";
 import { ChooseConcepts } from "@/context/context";
-import { isColorDark } from "@/utils/isColorDark";
+import { colorWeaver } from "@/utils/colorWeaver";
 
-export default function ConceptChipList({concepts, loading}: {concepts: ChooseConcepts["concepts"], loading: boolean}) {
+export default function ConceptChipList({
+  concepts,
+  loading,
+}: {
+  concepts: ChooseConcepts["concepts"];
+  loading: boolean;
+}) {
   return (
     <div className="flex flex-wrap justify-center gap-1">
       {concepts?.map((concept, idx) => (
@@ -17,7 +23,7 @@ export default function ConceptChipList({concepts, loading}: {concepts: ChooseCo
           style={{
             backgroundColor: concept.color,
             animationDelay: `${idx % 2 === 0 ? "0" : "0.5s"}`,
-            color: isColorDark(concept.color) ? "white" : "black",
+            color: colorWeaver.getTextColor(concept.color),
           }}
         >
           {concept.ko}
