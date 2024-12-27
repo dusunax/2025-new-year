@@ -7,7 +7,6 @@ import useImageGenerate from "@/hooks/use-image-generate";
 import ConceptChipList from "./ConceptChipList";
 import DisplayCard, { CARD_STYLE, CardAlign, CardStyle } from "./DisplayCard";
 import OptionCard from "./OptionCard";
-import { Button } from "@/components/ui/button";
 import KakaoShare from "@/components/kakao/KakaoShare";
 
 export default function ImageGenerate({
@@ -24,11 +23,7 @@ export default function ImageGenerate({
       imageContainerRef,
     });
 
-  const [message, setMessage] = useState<{
-    to: string;
-    from: string;
-    text: string;
-  }>({
+  const [message, setMessage] = useState<ImageGenerate["message"]>({
     to: "",
     from: "",
     text: "",
@@ -40,7 +35,7 @@ export default function ImageGenerate({
   return (
     <Funnel goBack={goBack}>
       <Funnel.Title>CardGenerate</Funnel.Title>
-        <ConceptChipList concepts={concepts} loading={loading} />
+      <ConceptChipList concepts={concepts} loading={loading} />
 
       <div className="flex flex-col gap-1 w-full lg:flex-row lg:max-w-[1200px] mx-auto">
         <DisplayCard

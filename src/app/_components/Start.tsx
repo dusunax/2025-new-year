@@ -3,8 +3,9 @@ import DraggableImageCard from "@/components/ImageCard/DraggableImageCard";
 import cardImage1 from "@/assets/images/cool.png";
 import cardImage2 from "@/assets/images/you-are-your-own-universe.png";
 import cardImage3 from "@/assets/images/countdown.png";
+import { type Start } from "@/context/context";
 
-export default function Start({ onNext }: { onNext: (props: any) => void }) {
+export default function Start({ onNext }: { onNext: (props: Start) => void }) {
   return (
     <Funnel>
       <div className="flex flex-col items-center justify-center">

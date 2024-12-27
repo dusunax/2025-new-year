@@ -17,6 +17,7 @@ export async function GET(res: Request) {
       headers: { "Content-Type": "image/png" },
     });
   } catch (error) {
+    console.log(error)
     return NextResponse.json(
       { error: "Error fetching the image" },
       { status: 500 }

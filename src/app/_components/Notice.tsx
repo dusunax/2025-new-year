@@ -1,11 +1,12 @@
 import Funnel from "@/components/funnel/FunnelUi";
 import { Card } from "@/components/ui/card";
+import { type Notice } from "@/context/context";
 
 export default function Notice({
   onNext,
   goBack,
 }: {
-  onNext: (props: any) => void;
+  onNext: (props: Notice) => void;
   goBack: () => void;
 }) {
   const { Title, GrayText, ButtonWrapper, Button } = Funnel;

@@ -117,7 +117,11 @@ export default function DisplayCard({
                   }}
                   priority
                 />
-                <Funnel.GrayText>이미지를 생성 중입니다.<br/>20초~2분 정도 소요됩니다.</Funnel.GrayText>
+                <Funnel.GrayText>
+                  이미지를 생성 중입니다.
+                  <br />
+                  20초~2분 정도 소요됩니다.
+                </Funnel.GrayText>
               </>
             ) : (
               <>
@@ -138,7 +142,7 @@ export default function DisplayCard({
           </div>
         )}
 
-        {cardShow && !loading && !hasError && message.text && (
+        {cardShow && !loading && !hasError && message?.text && (
           <div className="absolute w-full h-full left-0 top-0 grid grid-cols-5 grid-rows-5 text-sm sm:text-md md:text-lg">
             <motion.div
               className={`bg-white/80 rounded-xl backdrop-blur-sm cursor-grab m-2 transition-all duration-300 ${CARD_ALIGN_CLASS[cardAlign]}`}

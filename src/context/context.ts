@@ -1,6 +1,6 @@
 import { Concept } from "@/contant/constant";
 
-export type Start = {};
+export type Start = object;
 export type Notice = {
   name?: string;
   email?: string;
@@ -11,7 +11,7 @@ export type ChooseConcepts = {
 export type ImageGenerate = {
   concepts?: Concept[];
   image?: string;
-  message: {
+  message?: {
     to: string;
     from: string;
     text: string;

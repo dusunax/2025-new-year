@@ -14,7 +14,7 @@ import { cn } from "@/lib/utils";
 
 interface OptionCardProps {
   message: ImageGenerate["message"];
-  setMessage: Dispatch<SetStateAction<ImageGenerate["message"]>>;
+  setMessage: Dispatch<SetStateAction<ImageGenerate["message"] | undefined>>;
   cardStyle: CardStyle;
   setCardStyle: Dispatch<SetStateAction<CardStyle>>;
   cardShow: boolean;
@@ -43,7 +43,7 @@ export default function OptionCard({
           maxLength={20}
           value={message?.to}
           onChange={(e) =>
-            setMessage((prev) => ({ ...prev, to: e.target.value }))
+            setMessage((prev) => ( prev ? { ...prev, to: e.target.value } : { to: e.target.value, from: '', text: '' }))
           }
         />
       </div>
@@ -54,7 +54,9 @@ export default function OptionCard({
           maxLength={20}
           value={message?.from}
           onChange={(e) =>
-            setMessage((prev) => ({ ...prev, from: e.target.value }))
+            setMessage((prev) =>
+              prev ? { ...prev, from: e.target.value } : { from: e.target.value, to: '', text: '' }
+            )
           }
         />
       </div>
@@ -64,8 +66,8 @@ export default function OptionCard({
           placeholder="메시지를 입력해주세요"
           rows={4}
           maxLength={150}
-          value={message.text}
-          onChange={(e) => setMessage({ ...message, text: e.target.value })}
+          value={message?.text}
+          onChange={(e) => setMessage((prev) => ( prev ? { ...prev, text: e.target.value } : { text: e.target.value, to: '', from: '' }))}
         />
       </div>
 
@@ -98,12 +100,12 @@ export default function OptionCard({
         <Row>
           <RowLabel>Card Align:</RowLabel>
           <ul className="grid grid-cols-3">
-            {Object.entries(CARD_ALIGN_CLASS).map(([align, className]) => (
+            {Object.entries(CARD_ALIGN_CLASS).map(([align]) => (
               <li
                 key={align}
                 className={cn(
                   "w-16 h-16 border-2 text-[10px] break-all flex items-center justify-center cursor-pointer relative",
-                 cardShow && cardAlign === align
+                  cardShow && cardAlign === align
                     ? "border-orange-500 bg-orange-100 z-10"
                     : ""
                 )}

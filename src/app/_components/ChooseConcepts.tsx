@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import { CONCEPTS, type Concept } from "@/contant/constant";
 import Funnel from "@/components/funnel/FunnelUi";
 import { isColorDark } from "@/utils/isColorDark";
+import {  type ChooseConcepts } from "@/context/context";
 
 const MAX_SELECTED_CONCEPTS = 4;
 
@@ -12,7 +13,7 @@ export default function ChooseConcepts({
   onNext,
   goBack,
 }: {
-  onNext: (props: any) => void;
+  onNext: (prev: ChooseConcepts) => void
   goBack: () => void;
 }) {
   const [selectedConcepts, setSelectedConcepts] = useState<Concept[]>([]);

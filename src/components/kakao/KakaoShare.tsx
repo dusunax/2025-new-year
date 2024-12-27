@@ -5,12 +5,32 @@ import { Button } from "../ui/button";
 
 declare global {
   interface Window {
-    Kakao: any;
+    Kakao: {
+      init: (apiKey: string) => void;
+      Share: {
+        sendDefault: (options: {
+          objectType: string;
+          content: {
+            title: string;
+            imageUrl: string;
+            link: {
+              mobileWebUrl: string;
+              webUrl: string;
+            };
+          };
+        }) => void;
+      };
+    };
   }
 }
 
 function KakaoScript() {
   const onLoad = () => {
+    if (!KAKAO_API_KEY) {
+      console.assert(KAKAO_API_KEY, "KAKAO_API_KEY is not set");
+      return;
+    }
+
     window.Kakao.init(KAKAO_API_KEY);
   };
 
