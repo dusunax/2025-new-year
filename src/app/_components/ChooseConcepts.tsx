@@ -65,13 +65,13 @@ export default function ChooseConcepts({
               "sm:h-32 rounded-lg flex transition-all hover:delay-0 gap-2 cursor-pointer items-center sm:items-stretch",
               gridStyle(idx),
               gridStyleMd(idx),
+              colorWeaver.getTextColor(concept.color),
               selectedConcepts.length >= MAX_SELECTED_CONCEPTS
                 ? "!opacity-[0.6]"
                 : ""
             )}
             style={{
               backgroundColor: concept.color,
-              color: colorWeaver.getTextColor(concept.color),
             }}
             onClick={() => handleSelectConcept(concept)}
             whileHover={{

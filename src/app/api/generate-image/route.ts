@@ -12,7 +12,7 @@ export async function POST(request: Request) {
     const { prompt } = await request.json();
 
     const response = await openai.images.generate({
-      model: "dall-e-3",
+      model: "dall-e-2",
       prompt,
       n: 1,
       quality: "standard",
