@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Image from "next/image";
 import { motion } from "motion/react";
 import { XIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -76,21 +77,25 @@ export default function ChooseConcepts({
               shadow: "10px 10px 16px rgba(0, 0, 0, 0.7)",
             }}
           >
-            <div className="h-32 sm:h-full w-32 p-2 shrink-0">
-              <motion.img
-                whileHover={{
-                  scale: 1.5,
-                  zIndex: 50,
-                  shadow: "10px 10px 16px rgba(0, 0, 0, 1)",
-                }}
+            <motion.div className="h-32 sm:h-full w-32 p-2 shrink-0"
+            
+              whileHover={{
+                scale: 1.5,
+                zIndex: 50,
+                shadow: "10px 10px 16px rgba(0, 0, 0, 1)",
+              }}
+            >
+              <Image
                 src={`/images/concepts/${concept.en
                   .toLowerCase()
                   .split(" ")
                   .join("-")}.png`}
                 alt={concept.ko}
+                width={128}
+                height={128}
                 className="w-full h-full bg-white rounded-md bg-grey-400 relative"
               />
-            </div>
+            </motion.div>
             <div className="relative flex-1 flex flex-col justify-between py-2">
               <p className="text-xl font-semibold font-orbit relative z-10">
                 {concept.ko} {concept.icon}

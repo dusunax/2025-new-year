@@ -1010,6 +1010,11 @@ color@^4.2.3:
     color-convert "^2.0.1"
     color-string "^1.9.0"
 
+colored-status-code@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/colored-status-code/-/colored-status-code-1.0.0.tgz#1f8032fcd4eb3554023ed301e6af616a1ce66167"
+  integrity sha512-pA9Dbn1b7d6b1yR+H8Er+5p2j6AhormJRp7aTRRsLuOgUNgW4Epz8uIffvdinF1Kihs1yz9aEAWjAcrc5dkX2g==
+
 combined-stream@^1.0.8:
   version "1.0.8"
   resolved "https://registry.yarnpkg.com/combined-stream/-/combined-stream-1.0.8.tgz#c3d45a8b34fd730631a110a8a2520682b31d5a7f"

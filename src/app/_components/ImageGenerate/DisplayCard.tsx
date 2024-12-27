@@ -116,6 +116,7 @@ export default function DisplayCard({
                     mixBlendMode: "multiply",
                   }}
                   priority
+                  unoptimized
                 />
                 <Funnel.GrayText>
                   이미지를 생성 중입니다.

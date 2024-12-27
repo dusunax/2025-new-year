@@ -1,4 +1,4 @@
-import { RefObject, useEffect, useState } from "react";
+import { RefObject, useState } from "react";
 import html2canvas from "html2canvas";
 import { saveAs } from "file-saver";
 import { ChooseConcepts } from "@/context/context";
@@ -26,7 +26,7 @@ export default function useImageGenerate({
 
       toast({
         title: "그림을 생성하는 중입니다🥰",
-        duration: 5000,
+        duration: 10000,
       });
 
       const response = await fetch("/api/generate-image", {
@@ -36,11 +36,38 @@ export default function useImageGenerate({
 
       const data = await response.json();
       const imageUrl = data.imageUrl;
-      setGeneratedImage(imageUrl ?? "");
+
+      if (imageUrl) {
+        setGeneratedImage(imageUrl);
+        proxyFetch(imageUrl);
+      } else {
+        throw new Error("이미지 url이 없습니다.");
+      }
     } catch (e) {
       console.log(e);
+
+      toast({
+        title: "이미지 생성에 실패했습니다🥲",
+        description:
+          "잠시 후 다시 시도해주세요. 문제가 지속될 경우 개발자에게 문의해주세요.",
+        duration: 5000,
+        variant: "destructive",
+      });
     } finally {
       setLoading(false);
+    }
+  };
+
+  const proxyFetch = async (generatedImage: string) => {
+    try {
+      const response = await fetch(
+        `/api/proxy?url=${encodeURIComponent(generatedImage)}`
+      );
+      const blob = await response.blob();
+      const url = URL.createObjectURL(blob);
+      setLoadedImage(url);
+    } catch (error) {
+      console.error("Error loading image:", error);
     }
   };
 
@@ -93,28 +120,6 @@ export default function useImageGenerate({
       });
   };
 
-  useEffect(() => {
-    if (!generatedImage) return;
-    setLoading(true);
-
-    const proxyFetch = async () => {
-      try {
-        const response = await fetch(
-          `/api/proxy?url=${encodeURIComponent(generatedImage)}`
-        );
-        const blob = await response.blob();
-        const url = URL.createObjectURL(blob);
-        setLoadedImage(url);
-      } catch (error) {
-        console.error("Error loading image:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    proxyFetch();
-  }, [generatedImage]);
-
   return {
     generatedImage,
     loadedImage,
@@ -122,6 +127,5 @@ export default function useImageGenerate({
     downloadImage,
     linkCopy,
     loading,
-    setLoading,
   };
 }
