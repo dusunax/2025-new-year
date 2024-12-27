@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Funnel from "@/components/funnel/FunnelUi";
 import { Card } from "@/components/ui/card";
 
@@ -10,7 +9,6 @@ export default function Notice({
   goBack: () => void;
 }) {
   const { Title, GrayText, ButtonWrapper, Button } = Funnel;
-  const [isLogin, setIsLogin] = useState(false);
 
   return (
     <Funnel goBack={goBack}>
@@ -41,10 +39,7 @@ export default function Notice({
       </Card>
 
       <ButtonWrapper>
-        <Button onClick={() => setIsLogin(!isLogin)}>
-          {isLogin ? "로그아웃" : "로그인"}
-        </Button>
-        <Button onClick={() => onNext({})} disabled={!isLogin}>
+        <Button onClick={() => onNext({})}>
           Next
         </Button>
       </ButtonWrapper>

@@ -148,7 +148,7 @@ function ButtonWrapper({
   return (
     <div
       className={cn(
-        "fixed bottom-20 left-1/2 flex w-full max-w-[400px] -translate-x-1/2 justify-center gap-2 px-6 z-10",
+        "fixed bottom-8 sm:bottom-20 left-1/2 flex w-full max-w-[400px] -translate-x-1/2 justify-center gap-2 px-6 z-10",
         className
       )}
     >

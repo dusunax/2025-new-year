@@ -75,9 +75,7 @@ export default function DisplayCard({
   const [hasError, setHasError] = useState(false);
 
   return (
-    <Card
-      className="w-full relative rounded-xl overflow-hidden flex items-center justify-center"
-    >
+    <Card className="w-full relative rounded-xl overflow-hidden flex items-center justify-center">
       <div ref={imageContainerRef} className="w-full h-full min-h-[500px]">
         {loadedImage ? (
           <motion.div
@@ -119,7 +117,7 @@ export default function DisplayCard({
                   }}
                   priority
                 />
-                <Funnel.GrayText>이미지를 생성 중입니다.</Funnel.GrayText>
+                <Funnel.GrayText>이미지를 생성 중입니다.<br/>20초~2분 정도 소요됩니다.</Funnel.GrayText>
               </>
             ) : (
               <>
@@ -128,11 +126,13 @@ export default function DisplayCard({
                   alt="2025"
                   className="w-1/5 mb-6"
                   style={{
-                  mixBlendMode: "multiply",
-                }}
-                priority
-              />
-              <Funnel.Button onClick={generateImage}>이미지 생성하기</Funnel.Button>
+                    mixBlendMode: "multiply",
+                  }}
+                  priority
+                />
+                <Funnel.Button onClick={generateImage}>
+                  이미지 생성하기
+                </Funnel.Button>
               </>
             )}
           </div>
@@ -156,9 +156,7 @@ export default function DisplayCard({
                   {message?.to ? "To." + message?.to : ""}
                 </p>
                 <p className="break-all flex-1">{message?.text}</p>
-                {message?.from && (
-                  <p className="text-right">{message.from} 보냄</p>
-                )}
+                {message?.from && <p className="text-right">{message.from}</p>}
               </div>
             </motion.div>
           </div>

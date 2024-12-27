@@ -1,6 +1,5 @@
 import { CakeIcon } from "lucide-react";
 import FunnelRender from "./_components/FunnelRender";
-import { Toaster } from "@/components/ui/toaster";
 
 export default function Home() {
   return (
@@ -8,10 +7,10 @@ export default function Home() {
       <FunnelRender />
       <footer className="flex items-center justify-center gap-2 bg-gray-200">
         <a
-          href="https://github.com"
+          href="https://github.com/dusunax/2025-new-year"
           className="flex items-center gap-2 text-sm"
         >
-          <CakeIcon scale={0.8} /> https://github.com
+          <CakeIcon scale={0.8} /> https://github.com/dusunax/2025-new-year
         </a>
       </footer>
     </div>
