@@ -31,15 +31,17 @@ TypeScript, Next.js (v15), OpenAI (DALL·E 3), ShadCN, Tailwind CSS, Framer Moti
 
 ### 스크린샷
 
-<img src="https://github.com/user-attachments/assets/c3477489-9290-49ec-ad48-1fdedac3d702" width="600" />
-
 #### 데스크탑
 ![241227-desktop-3](https://github.com/user-attachments/assets/ab17dd71-a2ee-4316-8182-d3d9198a500a)
 ![241227-desktop-6](https://github.com/user-attachments/assets/e1714e88-8f89-4145-929c-3543bf70cb9c)
 
 #### 모바일
-
 <img src="https://github.com/user-attachments/assets/43502433-cd4d-4658-b9b1-a5d223cda9cb" width="200" />
 <img src="https://github.com/user-attachments/assets/11e45d47-c6ca-43ad-b76f-287f75a5b028" width="200" />
 <img src="https://github.com/user-attachments/assets/528b13ff-f0f2-45cf-bdac-5e42cb9bff9c" width="200" />
 <img src="https://github.com/user-attachments/assets/9905bce5-0029-4650-925b-7554e27a703a" width="200" />
+
+### 시연 예시
+<img src="https://github.com/user-attachments/assets/186520f3-fe4c-4381-bc1e-e40009865e5e" width="300" />
+<img src="https://github.com/user-attachments/assets/0017ce48-a595-4589-a0f2-2164fd0f8fe3" width="300" />
+<img src="https://github.com/user-attachments/assets/7a1a6f70-1070-4000-9f07-a105dc5fa360" width="300" />
