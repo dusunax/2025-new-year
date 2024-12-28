@@ -4,17 +4,17 @@
 
 ![2025-card-maker](https://github.com/user-attachments/assets/a0c45d27-928e-4b39-bd3e-c961ee315d3b)
 
----
 
-## 기술 스택
-```
-TypeScript, Next.js (v15), OpenAI (DALL·E 3), ShadCN, Tailwind CSS, Framer Motion, Vercel
-```
+---
 
 ## 2025 신년 카드 메이커 ✨
 
 새해를 준비하며 [2024 신년 카드 메이커](https://github.com/dusunax/2024-new-year)를 리뉴얼 했습니다.  
 푸른 뱀이 그려진 AI 이미지를 직접 만들어보세요. 4가지 컨셉을 조합해 카드를 만들 수 있어요.
+
+- 제작 기간: 2024년 12월 25일 ~ 12월 28일 (3일)
+- 시연 영상: https://www.youtube.com/watch?v=egHYZVpYxuM
+
 
 ### 주요 기능
 
@@ -22,6 +22,11 @@ TypeScript, Next.js (v15), OpenAI (DALL·E 3), ShadCN, Tailwind CSS, Framer Moti
 2. 메시지, 보내는 사람, 보낼 사람을 입력합니다.
 3. 이미지와 텍스트를 합친 카드 파일을 저장합니다.
 4. 홈페이지 링크를 공유합니다. (현재는 이미지를 서버에 저장하지 않고, 서비스 주소만 공유해요)
+
+### 기술 스택
+```
+TypeScript, Next.js (v15), OpenAI (DALL·E 3), ShadCN, Tailwind CSS, Framer Motion, Vercel
+```
 
 ### 2025년 버전 업데이트 사항
 
@@ -50,10 +55,3 @@ TypeScript, Next.js (v15), OpenAI (DALL·E 3), ShadCN, Tailwind CSS, Framer Moti
 <img src="https://github.com/user-attachments/assets/528b13ff-f0f2-45cf-bdac-5e42cb9bff9c" width="200" />
 <img src="https://github.com/user-attachments/assets/9905bce5-0029-4650-925b-7554e27a703a" width="200" />
 
-## 시연
-
-> Youtube 시연 영상: https://www.youtube.com/watch?v=egHYZVpYxuM
-
-<img src="https://github.com/user-attachments/assets/186520f3-fe4c-4381-bc1e-e40009865e5e" width="300" />
-<img src="https://github.com/user-attachments/assets/0017ce48-a595-4589-a0f2-2164fd0f8fe3" width="300" />
-<img src="https://github.com/user-attachments/assets/7a1a6f70-1070-4000-9f07-a105dc5fa360" width="300" />
