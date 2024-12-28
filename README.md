@@ -2,6 +2,9 @@
 
 >- new version of the [2024 New Year Card Maker](https://github.com/dusunax/2024-new-year)
 
+![2025-card-maker](https://github.com/user-attachments/assets/a0c45d27-928e-4b39-bd3e-c961ee315d3b)
+
+---
 
 ## 기술 스택
 ```
@@ -20,7 +23,7 @@ TypeScript, Next.js (v15), OpenAI (DALL·E 3), ShadCN, Tailwind CSS, Framer Moti
 3. 이미지와 텍스트를 합친 카드 파일을 저장합니다.
 4. 홈페이지 링크를 공유합니다. (현재는 이미지를 서버에 저장하지 않고, 서비스 주소만 공유해요)
 
-### 2025년 버전 업데이트
+### 2025년 버전 업데이트 사항
 
 #### 섹션 구성 변경:
 - 기존: 원페이지 내 vh 기준 섹션 구성
@@ -35,7 +38,6 @@ TypeScript, Next.js (v15), OpenAI (DALL·E 3), ShadCN, Tailwind CSS, Framer Moti
 - 애니메이션 요소: Framer Motion을 활용한 로딩, 드래그, 호버 이벤트에 애니메이션 효과 적용
   - 인터랙션 시 부드럽고 직관적인 시각적 피드백 제공
 
-
 ### 스크린샷
 
 #### 데스크탑
@@ -48,7 +50,10 @@ TypeScript, Next.js (v15), OpenAI (DALL·E 3), ShadCN, Tailwind CSS, Framer Moti
 <img src="https://github.com/user-attachments/assets/528b13ff-f0f2-45cf-bdac-5e42cb9bff9c" width="200" />
 <img src="https://github.com/user-attachments/assets/9905bce5-0029-4650-925b-7554e27a703a" width="200" />
 
-### 시연 예시
+## 시연
+
+> Youtube 시연 영상: https://www.youtube.com/watch?v=egHYZVpYxuM
+
 <img src="https://github.com/user-attachments/assets/186520f3-fe4c-4381-bc1e-e40009865e5e" width="300" />
 <img src="https://github.com/user-attachments/assets/0017ce48-a595-4589-a0f2-2164fd0f8fe3" width="300" />
 <img src="https://github.com/user-attachments/assets/7a1a6f70-1070-4000-9f07-a105dc5fa360" width="300" />
