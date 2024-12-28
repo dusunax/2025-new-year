@@ -1,16 +1,18 @@
 import Funnel from "@/components/funnel/FunnelUi";
 import DraggableImageCard from "@/components/ImageCard/DraggableImageCard";
-import cardImage1 from "@/assets/images/cool.png";
-import cardImage2 from "@/assets/images/you-are-your-own-universe.png";
-import cardImage3 from "@/assets/images/countdown.png";
+import cardImage1 from "@/assets/images/1.png";
+import cardImage2 from "@/assets/images/2.png";
+import cardImage3 from "@/assets/images/3.png";
 import { type Start } from "@/context/context";
 
 export default function Start({ onNext }: { onNext: (props: Start) => void }) {
   return (
     <Funnel>
       <div className="flex flex-col items-center justify-center">
-        <Funnel.Title>2025 새해 카드 만들기</Funnel.Title>
-        <Funnel.GrayText>친구들에게 새해 카드를 만들어 보세요.</Funnel.GrayText>
+        <Funnel.Title>2025 신년 카드 만들기</Funnel.Title>
+        <Funnel.GrayText>
+          푸른 뱀이 그려진 AI 이미지를 만들어 보세요.
+        </Funnel.GrayText>
       </div>
       <div className="flex flex-col justify-center items-center flex-1 gap-6">
         <div className="flex w-full justify-center">
@@ -36,9 +38,9 @@ export default function Start({ onNext }: { onNext: (props: Start) => void }) {
         <Funnel.BoldTitle>
           2025
           <br />
-          새해인사
+          신년 카드
           <br />
-          카드 만들기
+          만들기
         </Funnel.BoldTitle>
       </div>
 

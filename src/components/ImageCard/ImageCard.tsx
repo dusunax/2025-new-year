@@ -12,7 +12,7 @@ export default function ImageCard({
   return (
     <Card
       className={cn(
-        `w-[150%] pb-[50%] absolute left-1/2 -translate-x-1/2 shadow-lg bg-blue-200/50 backdrop-blur-sm p-[10%]`,
+        `w-[150%] pb-[50%] absolute left-1/2 -translate-x-1/2 shadow-lg bg-blue-200/50 backdrop-blur-sm p-[5%]`,
         className
       )}
       style={{
