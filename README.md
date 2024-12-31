@@ -18,10 +18,14 @@
 
 ### 주요 기능
 
-1. 컨셉을 선택하여 카드의 이미지를 만듭니다.
+1. 컨셉을 1~4개 조합하여 카드의 이미지를 만듭니다.
 2. 메시지, 보내는 사람, 보낼 사람을 입력합니다.
 3. 이미지와 텍스트를 합친 카드 파일을 저장합니다.
 4. 홈페이지 링크를 공유합니다. (현재는 이미지를 서버에 저장하지 않고, 서비스 주소만 공유해요)
+
+
+- 컨셉 조합 예시: 컬러풀, 도트, 귀여운
+<img src="https://github.com/user-attachments/assets/995a23f5-a1fe-4b8e-a81c-9447100a27b1" width="300" />
 
 ### 기술 스택
 ```
@@ -47,7 +51,7 @@ TypeScript, Next.js (v15), OpenAI (DALL·E 3), ShadCN, Tailwind CSS, Framer Moti
 
 #### 데스크탑
 ![241227-desktop-3](https://github.com/user-attachments/assets/ab17dd71-a2ee-4316-8182-d3d9198a500a)
-![241227-desktop-6](https://github.com/user-attachments/assets/e1714e88-8f89-4145-929c-3543bf70cb9c)
+![image](https://github.com/user-attachments/assets/6929fa42-84d9-4833-8e58-1567b6bf5e63)
 
 #### 모바일
 <img src="https://github.com/user-attachments/assets/43502433-cd4d-4658-b9b1-a5d223cda9cb" width="200" />
@@ -55,3 +59,6 @@ TypeScript, Next.js (v15), OpenAI (DALL·E 3), ShadCN, Tailwind CSS, Framer Moti
 <img src="https://github.com/user-attachments/assets/528b13ff-f0f2-45cf-bdac-5e42cb9bff9c" width="200" />
 <img src="https://github.com/user-attachments/assets/9905bce5-0029-4650-925b-7554e27a703a" width="200" />
 
+<br/>
+
+<img src="https://github.com/user-attachments/assets/f71f0f14-3ee3-4adb-bddb-70f154a43085" width="200" />
