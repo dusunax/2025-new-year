@@ -40,7 +40,7 @@ export const CARD_STYLE = [
 export type CardStyle = (typeof CARD_STYLE)[number];
 
 export type CardAlign =
-  | "top"
+  | "top-thin"
   | "bottom"
   | "left"
   | "right"
@@ -51,7 +51,7 @@ export type CardAlign =
   | "bottom-right";
 export const CARD_ALIGN_CLASS: Record<CardAlign, string> = {
   "top-left": "col-span-3 row-span-3 col-start-0 row-start-0",
-  top: "col-span-full row-span-2 col-start-0 row-start-0",
+  "top-thin": "col-span-full row-span-1 col-start-0 row-start-0",
   "top-right": "col-span-3 row-span-3 col-start-3 row-start-0",
   left: "col-span-2 row-span-full col-start-0 row-start-0",
   center: "col-span-3 row-span-3 col-start-2 row-start-2",
@@ -121,7 +121,7 @@ export default function DisplayCard({
         )}
 
         {cardShow && !loading && loadedImage && (
-          <div className="absolute w-full h-full left-0 top-0 grid grid-cols-5 grid-rows-5 text-sm sm:text-md md:text-lg">
+          <div className="absolute w-full h-full left-0 top-0 grid grid-cols-5 grid-rows-5">
             <motion.div
               className={`bg-white/80 rounded-xl backdrop-blur-sm cursor-grab m-2 transition-all duration-300 ${CARD_ALIGN_CLASS[cardAlign]}`}
               initial={{ opacity: 0 }}
@@ -133,7 +133,7 @@ export default function DisplayCard({
                 color: cardStyle.color,
               }}
             >
-              <div className="p-2 sm:p-6 flex flex-col gap-3 justify-between h-full text-4xl">
+              <div className="p-2 px-4 sm:p-4 md:p-6 flex flex-col gap-2 sm:gap-3 justify-between h-full text-xl lg:text-4xl">
                 <p className="pb-1 border-b-2 border-dotted self-start">
                   {message?.to ? "To." + message?.to : ""}
                 </p>
