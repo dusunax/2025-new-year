@@ -133,7 +133,7 @@ export default function DisplayCard({
                 color: cardStyle.color,
               }}
             >
-              <div className="p-2 sm:p-6 flex flex-col gap-3 justify-between h-full">
+              <div className="p-2 sm:p-6 flex flex-col gap-3 justify-between h-full text-4xl">
                 <p className="pb-1 border-b-2 border-dotted self-start">
                   {message?.to ? "To." + message?.to : ""}
                 </p>

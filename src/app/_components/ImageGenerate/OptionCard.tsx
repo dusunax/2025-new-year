@@ -85,8 +85,8 @@ export default function OptionCard({
         <RowLabel> Message:</RowLabel>
         <Textarea
           placeholder="메시지를 입력해주세요"
-          rows={4}
-          maxLength={150}
+          rows={3}
+          maxLength={80}
           value={message?.text}
           onChange={(e) =>
             setMessage((prev) =>
